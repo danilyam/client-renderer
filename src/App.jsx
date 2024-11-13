@@ -7,7 +7,6 @@ const App = () => {
 
   const SERVER_URL = 'https://render-test-gzhv.onrender.com';
 
-  // Получение списка задач с сервера
   useEffect(() => {
     const fetchTodos = async () => {
       try {
@@ -21,7 +20,6 @@ const App = () => {
     fetchTodos();
   }, []);
 
-  // Добавление новой задачи
   const addTodo = async () => {
     if (newTodo.trim()) {
       try {
@@ -34,7 +32,6 @@ const App = () => {
     }
   };
 
-  // Удаление задачи по ID
   const deleteTodo = async (id) => {
     try {
       await axios.delete(`${SERVER_URL}/todos/${id}`);
